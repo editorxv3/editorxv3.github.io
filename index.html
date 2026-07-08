@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayaan Bukhari — Video Editor</title>
+<meta name="description" content="Ayaan Bukhari is an Istanbul-based video editor working across travel & lifestyle reels, broadcast news segments, and drama series editing.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ SCRUBBER NAV ============ -->
+<nav class="scrubber" id="scrubber">
+  <div class="scrubber-inner">
+    <a href="#hero" class="scrubber-logo">AYAAN<span>.</span>BUKHARI</a>
+    <div class="scrubber-track">
+      <div class="scrubber-line"></div>
+      <div class="scrubber-ticks" id="scrubberTicks">
+        <button class="scrubber-tick" data-target="hero"><span class="tc">00:00</span><span class="lbl">Reel</span></button>
+        <button class="scrubber-tick" data-target="about"><span class="tc">00:10</span><span class="lbl">About</span></button>
+        <button class="scrubber-tick" data-target="work"><span class="tc">00:20</span><span class="lbl">Work</span></button>
+        <button class="scrubber-tick" data-target="channels"><span class="tc">00:30</span><span class="lbl">Channels</span></button>
+        <button class="scrubber-tick" data-target="services"><span class="tc">00:40</span><span class="lbl">Services</span></button>
+        <button class="scrubber-tick" data-target="contact"><span class="tc">00:50</span><span class="lbl">Contact</span></button>
+      </div>
+      <div class="playhead" id="playhead"></div>
+    </div>
+    <a href="https://wa.me/905316702707" class="scrubber-contact" target="_blank" rel="noopener">Hire me</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <span class="eyebrow">Istanbul · Video Editor</span>
+        <h1 class="hero-title">Cuts that hold<br>the <span class="accent">watch.</span></h1>
+      </div>
+      <p class="hero-sub">
+        Three years cutting <strong>travel & lifestyle reels</strong>, <strong>broadcast news segments</strong>,
+        and a running <strong>drama series</strong> — for channels across Turkey, Pakistan, and beyond.
+      </p>
+    </div>
+
+    <div class="reel-frame" id="reelFrame">
+      <span class="reel-badge">Showreel · 0:56</span>
+      <video id="reelVideo" playsinline preload="metadata" poster="assets/posters/showreel.jpg">
+        <source src="assets/video/showreel.mp4" type="video/mp4">
+      </video>
+      <button class="reel-play" id="reelPlay" aria-label="Play showreel">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="31" fill="white" fill-opacity="0.95"/>
+          <path d="M26 21L44 32L26 43V21Z" fill="#15171B"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hero-strip">
+      <span><b>Based:</b> Istanbul, Türkiye</span>
+      <span><b>Languages:</b> English · Türkçe · اردو · العربية</span>
+      <span><b>Formats:</b> 9:16 · 16:9 · Broadcast delivery</span>
+      <span><b>Available:</b> Freelance, remote-friendly</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">00:10 — About</span>
+        <div class="section-head" style="margin-top:14px;">
+          <h2>An editor who lives<br>in the timeline.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I'm Ayaan, a freelance video editor based in Istanbul. For the past three years I've cut travel and lifestyle content for social platforms, edited broadcast segments for TV news reporters, and I currently edit an ongoing Pakistani drama series.</p>
+          <p>Growing up between Pakistani and Turkish culture — and working fluently across English, Turkish, Urdu, and Arabic — I edit for audiences on both sides of a story, which matters when the client is a channel, a tourism board, or a reporter filing from the field.</p>
+          <p>My work splits into two lanes: fast, hooky short-form built for Reels and TikTok, and longer broadcast-paced cuts built for news and episodic delivery.</p>
+        </div>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><div class="num">3+</div><div class="lbl">Years editing professionally</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Languages: EN · TR · UR · AR</div></div>
+        <div class="stat"><div class="num">6+</div><div class="lbl">Channels & outlets edited for</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Formats: short-form + broadcast</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">00:20 — Work</span>
+    <div class="section-head" style="margin-top:14px;">
+      <h2>Recent cuts</h2>
+      <p>A mix of travel short-form, lifestyle reels, and an ongoing drama series edit.</p>
+    </div>
+
+    <div class="work-grid">
+
+      <article class="clip-card">
+        <div class="clip-media" id="clip1Media">
+          <span class="clip-tag">9:16 · 1:23</span>
+          <video id="clip1Video" playsinline preload="none" poster="assets/posters/5-day-package.jpg">
+            <source src="assets/video/5-day-package.mp4" type="video/mp4">
+          </video>
+          <button class="reel-play" data-video="clip1Video" aria-label="Play 5 Day Package">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="31" fill="white" fill-opacity="0.95"/>
+              <path d="M26 21L44 32L26 43V21Z" fill="#15171B"/>
+            </svg>
+          </button>
+        </div>
+        <div class="clip-body">
+          <h3>5 Day Package</h3>
+          <p>A fast-paced travel package promo built for vertical scroll — hook, itinerary highlights, close.</p>
+          <div class="clip-meta"><span>Short-form</span><span>Travel</span></div>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-media" id="clip2Media">
+          <span class="clip-tag">9:16 · 2:11</span>
+          <video id="clip2Video" playsinline preload="none" poster="assets/posters/keyif-style-reel.jpg">
+            <source src="assets/video/keyif-style-reel.mp4" type="video/mp4">
+          </video>
+          <button class="reel-play" data-video="clip2Video" aria-label="Play Keyif Style Reel">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="31" fill="white" fill-opacity="0.95"/>
+              <path d="M26 21L44 32L26 43V21Z" fill="#15171B"/>
+            </svg>
+          </button>
+        </div>
+        <div class="clip-body">
+          <h3>Keyif Style Reel</h3>
+          <p>A longer-form lifestyle reel with a slower, atmospheric edit rhythm and branded thumbnail.</p>
+          <div class="clip-meta"><span>Lifestyle</span><span>Style</span></div>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-media" id="clip3Media">
+          <span class="clip-tag">9:16 · 0:43</span>
+          <video id="clip3Video" playsinline preload="none" poster="assets/posters/ankara-taxi.jpg">
+            <source src="assets/video/ankara-taxi.mp4" type="video/mp4">
+          </video>
+          <button class="reel-play" data-video="clip3Video" aria-label="Play Ankara Taxi Button">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="31" fill="white" fill-opacity="0.95"/>
+              <path d="M26 21L44 32L26 43V21Z" fill="#15171B"/>
+            </svg>
+          </button>
+        </div>
+        <div class="clip-body">
+          <h3>Ankara Taxi Button</h3>
+          <p>A snappy, punchline-driven short built around a single practical travel tip.</p>
+          <div class="clip-meta"><span>Short-form</span><span>Travel tips</span></div>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-media landscape">
+          <span class="clip-tag logo-tag">Series</span>
+          <img src="assets/img/logo-lazawal-ishq.png" alt="Lazawal Ishq logo" style="object-fit:contain; padding:40px; background:#111;">
+        </div>
+        <div class="clip-body">
+          <h3>Lazawal Ishq</h3>
+          <p>Ongoing episode edit for the Pakistani adaptation of the Turkish drama <em>Aşk Adası</em> — dialogue pacing, scene continuity, and emotional beats across multiple episodes.</p>
+          <div class="clip-meta"><span>Drama series</span><span>Episodic</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHANNELS ============ -->
+<section id="channels">
+  <div class="wrap">
+    <span class="eyebrow">00:30 — Channels</span>
+    <div class="section-head" style="margin-top:14px;">
+      <h2>Channels & organizations<br>I've edited for</h2>
+      <p>From lifestyle broadcasters to news outlets and international forums.</p>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-cell"><img src="assets/img/logo-tr-urdu.jpeg" alt="TR-Urdu"></div>
+      <div class="channel-cell"><img src="assets/img/logo-fb-riz-tv.png" alt="FB Riz TV"></div>
+      <div class="channel-cell"><img src="assets/img/logo-world-climate-forum.png" alt="World Climate Forum"></div>
+      <div class="channel-cell"><img src="assets/img/logo-public-news.png" alt="Public News"></div>
+      <div class="channel-cell"><img src="assets/img/logo-tv-today-digital.png" alt="TV Today Digital"></div>
+      <div class="channel-cell"><img src="assets/img/logo-discover-pakistan.png" alt="Discover Pakistan UHD TV"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">00:40 — Services</span>
+    <div class="section-head" style="margin-top:14px;">
+      <h2>What I edit</h2>
+      <p>Two lanes, built for different platforms and paces.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="tc">01</span>
+        <h3>Short-form editing</h3>
+        <p>Reels, TikToks, and vertical travel/lifestyle content — hook-first pacing, captions, and trend-aware sound design.</p>
+      </div>
+      <div class="service-card">
+        <span class="tc">02</span>
+        <h3>Long-form editing</h3>
+        <p>Vlogs, YouTube episodes, and extended lifestyle pieces with a slower, story-driven cut.</p>
+      </div>
+      <div class="service-card">
+        <span class="tc">03</span>
+        <h3>Broadcast & news segments</h3>
+        <p>Field-report and reporter-package editing — clean cuts, lower-thirds pacing, and delivery-ready exports.</p>
+      </div>
+      <div class="service-card">
+        <span class="tc">04</span>
+        <h3>Series & episodic editing</h3>
+        <p>Ongoing episode delivery with consistent pacing and continuity across a series run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <div>
+        <span class="eyebrow">00:50 — Contact</span>
+        <h2>Let's cut something<br>worth watching.</h2>
+        <p>Fastest way to reach me is WhatsApp. For past work and behind-the-scenes, find me on Instagram.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="https://wa.me/905316702707" target="_blank" rel="noopener">
+          <span><span class="platform">WhatsApp</span><span class="handle">+90 531 670 27 07</span></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/editor.x.v3" target="_blank" rel="noopener">
+          <span><span class="platform">Instagram</span><span class="handle">@editor.x.v3</span></span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> Ayaan Bukhari</span>
+  <span>Istanbul, Türkiye</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
