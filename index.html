@@ -6,8 +6,19 @@
 <title>Ayaan Bukhari — Video Editor & Photographer</title>
 <meta name="description" content="Ayaan Bukhari is an Istanbul-based video editor and photographer working across travel & lifestyle reels, broadcast news segments, drama series editing, and photography/videography services around Istanbul.">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/vendor/lenis.css">
 </head>
 <body>
+
+<!-- Custom viewfinder cursor (desktop only, disabled under reduced-motion) -->
+<div class="viewfinder-cursor" id="viewfinderCursor" aria-hidden="true">
+  <span class="vf-corner vf-tl"></span>
+  <span class="vf-corner vf-tr"></span>
+  <span class="vf-corner vf-bl"></span>
+  <span class="vf-corner vf-br"></span>
+  <span class="vf-dot"></span>
+  <span class="vf-label" id="vfLabel"></span>
+</div>
 
 <!-- ============ SCRUBBER NAV ============ -->
 <nav class="scrubber" id="scrubber">
@@ -49,7 +60,7 @@
       <video id="reelVideo" playsinline preload="metadata" poster="assets/posters/showreel.jpg">
         <source src="assets/video/showreel.mp4" type="video/mp4">
       </video>
-      <button class="reel-play" id="reelPlay" aria-label="Play showreel">
+      <button class="reel-play" id="reelPlay" aria-label="Play showreel" data-cursor-label="PLAY">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="32" cy="32" r="31" fill="white" fill-opacity="0.95"/>
           <path d="M26 21L44 32L26 43V21Z" fill="#15171B"/>
@@ -321,6 +332,9 @@
   <span>Istanbul, Türkiye</span>
 </footer>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

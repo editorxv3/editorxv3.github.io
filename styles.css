@@ -582,6 +582,93 @@ section:last-of-type { border-bottom: none; }
 .contact-link .handle { font-family: var(--display); font-weight: 700; font-size: 17px; }
 .contact-link .arrow { font-size: 20px; color: var(--red); }
 
+/* ---------------- Viewfinder cursor (signature interaction) ---------------- */
+/* A camera-autofocus-style reticle that replaces the pointer on desktop.
+   Corners contract inward on interactive elements, like a lens locking focus. */
+html.viewfinder-active,
+html.viewfinder-active a,
+html.viewfinder-active button,
+html.viewfinder-active .photo-card {
+  cursor: none;
+}
+.viewfinder-cursor {
+  --vf-gap: 21px;
+  position: fixed;
+  top: 0; left: 0;
+  width: 0; height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+html.viewfinder-active .viewfinder-cursor { opacity: 1; }
+.vf-corner {
+  position: absolute;
+  top: 0; left: 0;
+  width: 9px; height: 9px;
+  border: 1.5px solid var(--red);
+  transition: transform 0.22s cubic-bezier(.2,.8,.2,1), border-color 0.22s ease;
+}
+.vf-tl { transform: translate(calc(-100% - var(--vf-gap)), calc(-100% - var(--vf-gap))); border-right: none; border-bottom: none; }
+.vf-tr { transform: translate(var(--vf-gap), calc(-100% - var(--vf-gap))); border-left: none; border-bottom: none; }
+.vf-bl { transform: translate(calc(-100% - var(--vf-gap)), var(--vf-gap)); border-right: none; border-top: none; }
+.vf-br { transform: translate(var(--vf-gap), var(--vf-gap)); border-left: none; border-top: none; }
+.vf-dot {
+  position: absolute;
+  top: -2.5px; left: -2.5px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.vf-label {
+  position: absolute;
+  top: 26px; left: 0;
+  transform: translateX(-50%) translateY(4px);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  box-shadow: 0 6px 16px rgba(20,20,20,0.15);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.viewfinder-cursor.focus { --vf-gap: 14px; }
+.viewfinder-cursor.focus .vf-corner { border-color: var(--green); }
+.viewfinder-cursor.focus .vf-dot { transform: scale(0); opacity: 0; }
+.vf-label.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---------------- Film grain texture (hero reel, cinematic atmosphere) ---------------- */
+.reel-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+  animation: grain 0.7s steps(3) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-1.5%, 1%); }
+  66% { transform: translate(1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reel-frame::after { animation: none; }
+}
+
+/* Scroll-reveal hidden states are set entirely from JS (gsap.set), never
+   from CSS — so if a script ever fails to load, content just has no
+   entrance animation instead of risking staying invisible forever. */
+
 /* ---------------- Footer ---------------- */
 footer {
   padding: 28px 0 40px;
