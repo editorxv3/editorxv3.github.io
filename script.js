@@ -128,6 +128,13 @@ if (!reduceMotion && hasGSAP) {
   if (hasScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Subtle parallax on the hero reel — validated "Standard" tier timing
+    gsap.to('#reelFrame', {
+      yPercent: -6,
+      ease: 'none',
+      scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 0.5 }
+    });
+
     const revealSelectors = [
       '.section-head', '.clip-card', '.photo-pile', '.photo-grid-mobile',
       '.channel-featured', '.channel-cell', '.service-card', '.stat', '.contact-panel'
@@ -136,11 +143,11 @@ if (!reduceMotion && hasGSAP) {
     revealSelectors.forEach(sel => {
       const els = gsap.utils.toArray(sel);
       if (!els.length) return;
-      gsap.set(els, { opacity: 0, y: 26 });
+      gsap.set(els, { opacity: 0, y: 22 });
       ScrollTrigger.batch(els, {
         start: 'top 88%',
         once: true,
-        onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out' })
+        onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' })
       });
     });
   }
